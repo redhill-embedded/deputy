@@ -57,7 +57,6 @@ class Term:
             # Windows registry locations to search
             windows_registry_paths = [
                 r"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall",
-                r"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall"
             ]
 
             # Check common paths on Windows

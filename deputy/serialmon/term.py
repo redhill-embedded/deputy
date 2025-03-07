@@ -115,14 +115,11 @@ class Term:
             term_str = [arg.format(path=self.term_path, baud=self.baud, port=self.port, config=self.config) for arg in self.terminal_programs[self.term]]
             wait_on_process = False
 
-        print(term_str)
         try:
             proc = subprocess.Popen(term_str)
             if wait_on_process:
                 proc.wait()
-        except Exception as e:
-            print(e)
-        #except FileNotFoundError:
-        #    print(f"Error opening port {self.port}")
-        #    return -1
+        except FileNotFoundError:
+            print(f"Error opening port {self.port}")
+            return -1
         return 0
